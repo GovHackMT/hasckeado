@@ -1,0 +1,63 @@
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: silver;  /*Sets the text hover color on navbar*/
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >
+a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: white; /*BACKGROUND color for active*/
+  background-color: #030033;
+}
+
+.navbar-default {
+  background-color: #6f0014;
+  border-color: #030033;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: #262626;
+  text-decoration: none;
+  background-color: #ff6666;  /*change color of links in drop down here*/
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: white; /*Change rollover cell color here*/
+}
+
+
+.navbar-default .navbar-nav > li > a {
+  color: white; /*Change active text color here*/
+}
+
+.navbar-default .navbar-brand{
+  color: white; /*Change Brand text color here*/
+}
+
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover{
+  background-color: #6f0014; /*Change Menu Background color here*/
+}
+
+.navbar-default .navbar-toggle .icon-bar{
+  background-color: white; /*Change Menu icon bar Background color here*/
+}
+
+.btn-primary{
+  background-color: #6f0014; /*Change Button Background color here*/
+  border-color: #4f0512;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active:focus{
+  background-color: #ff6666; /*Change Hover Button Background color here*/
+}
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:focus,
+.navbar-default .navbar-nav>.open>a:hover{
+  color: white;
+  background-color: #ff6666;
+}

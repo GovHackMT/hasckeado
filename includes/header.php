@@ -12,16 +12,23 @@ error_reporting(E_ALL);
 	<script type="text/javascript" src="/hasckeado/bootstrap/js/bootstrap.min.js"></script>
 	<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="/hasckeado/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="/hasckeado/css/sistema.css" rel="stylesheet" type="text/css">
 </head>
 
 <header>
 	<nav class="navbar navbar-default">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/hasckeado/index.php"><span>Brand</span></a>
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/hasckeado/indexLogado.php"><span>Brand</span></a>
 			</div>
-			<div class="collapse navbar-collapse" id="navbar-ex-collapse">
-				<ul class="nav navbar-nav navbar-right">
+			<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
 					<li>
 						<a href="/hasckeado/view/login.php">Logar</a>
 					</li>
