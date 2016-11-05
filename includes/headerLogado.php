@@ -48,3 +48,5 @@ error_reporting(E_ALL);
 		</div>
 	</nav>
 </header>
+
+<div id="wrap">

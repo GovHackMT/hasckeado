@@ -16,12 +16,12 @@ include "../includes/header.php";
           placeholder="email@email.com" type="email"  required="required">
         </div>
         <div class="form-group">
-          <label class="control-label" for="password1">Senha</label>
-          <input class="form-control" id="password1" name="password1"
+          <label class="control-label" for="password">Senha</label>
+          <input class="form-control" id="password" name="password"
           placeholder="" type="password" required="required">
           <br />
         </div>
-        <a class="btn btn-primary" href="/hasckeado/indexLogado.php">Primary</a>
+        <a class="btn btn-primary" href="/hasckeado/indexLogado.php">Confirmar</a>
       </div>
     </div>
   </div>
