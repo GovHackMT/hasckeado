@@ -15,15 +15,27 @@ error_reporting(E_ALL);
 </head>
 
 <header>
-	<nav class="navbar navbar-default">
+	<nav class="navbar navbar-default bg-primary">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/hasckeado/index.php"><span>Brand</span></a>
+				<a class="navbar-brand" href="/hasckeado/indexLogado.php"><span>Brand</span></a>
 			</div>
 			<div class="collapse navbar-collapse" id="navbar-ex-collapse">
 				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/hasckeado/view/resultado.php">Enviar Resultado</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+							Cadastro
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/hasckeado/view/usuario.php">Usuário</a></li>
+							<li><a href="/hasckeado/view/hemocentro.php">Hemocentro</a></li>
+							<li><a href="/hasckeado/view/doador.php">Doador</a></li>
+						</ul>
+					</li>
 					<li>
-						<a href="/hasckeado/view/login.php">Logar</a>
+						<a href="/hasckeado/index.php">Sair</a>
 					</li>
 				</ul>
 			</div>
