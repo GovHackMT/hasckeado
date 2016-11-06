@@ -1,6 +1,9 @@
 <?php
 include "../includes/header.php";
 
+if (!isset($_SESSION['usuario'])) {
+    header("location: ../index.php");
+}
 
 require_once "../controller/controllerHemocentro.php";
 require_once "../vo/hemocentroVO.php";

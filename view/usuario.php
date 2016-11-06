@@ -4,7 +4,7 @@
 //$controller = new ControllerTipoSanguineo();
 
 //$resultado = $controller->BuscarTodos();
-include "../includes/headerLogado.php";
+include "../includes/header.php";
 ?>
 <div class="section">
   <div class="container">

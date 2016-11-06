@@ -2,6 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+session_start();
 ?>
 <html>
 
@@ -25,12 +26,35 @@ error_reporting(E_ALL);
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/hasckeado/index.php"><span>Brand</span></a>
+				<a class="navbar-brand" href="/hasckeado/indexLogado.php"><span>Brand</span></a>
 			</div>
 			<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+							Cadastro
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/hasckeado/view/usuario.php">Usuário</a></li>
+                                                        <?php if(isset($_SESSION['usuario'])){ ?>
+							<li><a href="/hasckeado/view/hemocentro.php">Hemocentro</a></li>
+							<li><a href="/hasckeado/view/doador.php">Doador</a></li>
+							<li><a href="/hasckeado/view/campanha.php">Campanha</a></li>
+                                                        <?php }?>
+						</ul>
+					</li>
 					<li>
-						<a href="/hasckeado/view/login.php">Logar</a>
+						<?php if(isset($_SESSION['usuario'])){ ?>
+                                                    <a href="/hasckeado/includes/logout.php">Sair</a>
+                                                    <?php
+                                                    
+                                                } else{
+                                                    ?>
+                                                    <a href="/hasckeado/view/login.php">Logar</a>
+                                                    <?php
+                                                } ?>
+                                                        
 					</li>
 				</ul>
 			</div>
