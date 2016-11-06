@@ -38,6 +38,7 @@ error_reporting(E_ALL);
 							<li><a href="/hasckeado/view/usuario.php">Usuário</a></li>
 							<li><a href="/hasckeado/view/hemocentro.php">Hemocentro</a></li>
 							<li><a href="/hasckeado/view/doador.php">Doador</a></li>
+							<li><a href="/hasckeado/view/campanha.php">Campanha</a></li>
 						</ul>
 					</li>
 					<li>

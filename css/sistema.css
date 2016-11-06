@@ -8,7 +8,8 @@ a:hover, .navbar-default .navbar-nav > .active > a:focus {
   background-color: #030033;
 }
 
-.navbar-default {
+.navbar-default,
+.panel-primary > .panel-heading{
   background-color: #6f0014;
   border-color: #030033;
   border-radius: 0px;
