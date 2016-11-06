@@ -80,7 +80,9 @@ $hemocentroList = $controllerHemocentro->BuscarTodosPorUsuario($_SESSION['usuari
 <div class="section">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title">Nova Campanha</h3>
@@ -138,6 +140,7 @@ $hemocentroList = $controllerHemocentro->BuscarTodosPorUsuario($_SESSION['usuari
                     </div>
                 </div>
             </div>
+            <div class="col-md-2"></div>
         </div>
     </div>
 </div>

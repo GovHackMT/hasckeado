@@ -55,8 +55,6 @@ if (isset($_POST['nome'])) {
         </div
         <?php
     }
-
-
 }
 ?>
 <script type="text/javascript" src="../js/jquery-ui.custom.min.js"></script>
@@ -68,7 +66,8 @@ if (isset($_POST['nome'])) {
 <div class="section">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title">Novo Hemocentro</h3>
@@ -118,8 +117,11 @@ if (isset($_POST['nome'])) {
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-2"></div>
         </div>
     </div>
+</div>
 </div>
 
 <?php

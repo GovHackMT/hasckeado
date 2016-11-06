@@ -14,22 +14,35 @@ if (isset($_SESSION['tipousuario']) && $_SESSION['tipousuario'] == 0) {
     <script src="../js/grafico2.js"></script>
     <script src="../js/grafico3.js"></script>
 
-    
-    <div id="container2" ></div>
-    
-
-<div class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-5"><div id="container1"></div></div>
-          <div class="col-md-2"></div>
-          <div class="col-md-5"><div id="container3"></div></div>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="container2" ></div>
+                </div>
+            </div>
         </div>
-      </div>
-</div>
-    <?php
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5"><div id="container1"></div></div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-5"><div id="container3"></div></div>
+                </div>
+            </div>
+        </div>
+        <?php
 
-} else
-    header("location: ../index.php");
-include "../includes/footer.php";
-?>
+    } else
+        header("location: ../index.php");
+    include "../includes/footer.php";
+    ?>

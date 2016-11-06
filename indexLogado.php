@@ -13,7 +13,7 @@ if (isset($_SESSION['usuario'])) {
                     <div class="col-md-4"></div>
                     <div class="col-md-4">
            <!--<p>Olá Fulano, você poderá fazer novas doações a partir de X!</p>-->
-                        <img src="/hasckeado/images/avatar.jpg" class="img-circle" width="100%" >
+                        <img src="/hasckeado/images/avatar.jpg" class="img-circle" width="60%" >
                         <br />
                         <br />
 
