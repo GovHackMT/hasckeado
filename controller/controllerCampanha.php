@@ -16,6 +16,11 @@ class controllerCampanha{
   public function BuscarPorId($id) {
       return modelCampanha::getInstance()->BuscarPorId($id);
   }
+  
+  public function BuscarTodosPorUsuario($id) {
+      return modelCampanha::getInstance()->BuscarTodosPorUsuario($id);
+  }
+    
 
   public function Atualizar(campanhaVo $campanha) {
       return modelCampanha::getInstance()->Atualizar($campanha);

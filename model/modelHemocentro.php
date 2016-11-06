@@ -102,9 +102,9 @@ class ModelHemocentro {
             print_r($e);
         }
     }
-    
+
     public function Atualizar(HemocentroVO $hemocentro) {
-           try {
+        try {
             $sql = "UPDATE hemocentro set
                         nome = :nome,
                         telefone = :telefone,
@@ -133,6 +133,27 @@ class ModelHemocentro {
         } catch (Exception $e) {
             print "Ocorreu um erro ao tentar executar esta ação, foi gerado
             um LOG do mesmo, tente novamente mais tarde.";
+            print_r($e);
+        }
+    }
+
+    public function BuscarTodosPorUsuario($id) {
+        try {
+            $sql = "select distinct  h.* from hemocentro h 
+                        inner join usuario_hemocentro uh on uh.id_hemocentro = h.id
+                        where uh.id_usuario = :id_usuario 
+                        and h.status = 1";
+            $p_sql = Conexao::getInstance()->prepare($sql);
+            $p_sql->bindValue(":id_usuario", $id);
+            $p_sql->execute();
+
+            while ($row = $p_sql->fetch(PDO::FETCH_ASSOC)) {
+                $resultado[] = $row;
+            }
+            return $resultado;
+        } catch (Exception $e) {
+            print "Ocorreu um erro ao tentar executar esta ação, foi gerado
+      um LOG do mesmo, tente novamente mais tarde.";
             print_r($e);
         }
     }

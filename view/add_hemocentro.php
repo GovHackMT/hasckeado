@@ -57,7 +57,6 @@ if (isset($_POST['nome'])) {
     }
 
 
-    //header("Location: index.php");
 }
 ?>
 <script type="text/javascript" src="../js/jquery-ui.custom.min.js"></script>

@@ -25,6 +25,10 @@ class ControllerHemocentro {
         return ModelHemocentro::getInstance()->Inserir($hemocentro);
     }
 
+    public function BuscarTodosPorUsuario($id) {
+        return ModelHemocentro::getInstance()->BuscarTodosPorUsuario($id);
+    }
+
 }
 
 ?>
