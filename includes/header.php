@@ -27,7 +27,7 @@ session_start();
 					<span class="icon-bar"></span>
 				</button>
 				<?php if (isset($_SESSION['usuario'])) { ?>
-					<a class="navbar-brand" href="/hasckeado/indexLogado.php"><span>Doe Sangue</span></a>
+					<a class="navbar-brand" href="/hasckeado/indexLogado.php"><span>Hemotech</span></a>
 					<?php
 				} else {
 					?>
