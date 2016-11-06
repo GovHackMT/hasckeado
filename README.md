@@ -9,6 +9,7 @@ Sistema de gerenciamento de doadores de sangue.
 * Marcos Oliveira @ziguifrido
 * Jusolu Coperfield @jotace1992
 * Fábio Archanjo @fabiinfo
+* Welber
 
 
 # Aspectos ténicos do projeto
