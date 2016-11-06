@@ -115,8 +115,8 @@ if (isset($_POST['id'])) {
                                     <div class="form-group">
                                         <label class="control-label" for="status" >Status</label>
                                         <select class="form-control" id="status" name="status">
-                                            <option value="1">Ativo</option>
-                                            <option value="2">Inativo</option>
+                                            <option value="1" <?php if ($hemocentro->getStatus()==1) echo 'selected'?>>Ativo</option>
+                                            <option value="0" <?php if ($hemocentro->getStatus()==0) echo 'selected'?>>Inativo</option>
                                         </select>
                                     </div>
 
