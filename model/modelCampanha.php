@@ -20,7 +20,8 @@ Class modelCampanha {
 
     public function BuscarTodosPorUsuario($id) {
         try {
-            $sql = "select distinct c.id, c.nome campanha, c.descricao, c.dataInicio, c.dataFim, h.nome as hemocentro from campanha c
+            $sql = "select distinct c.id, c.nome campanha, c.descricao, c.dataInicio, c.dataFim, h.nome as hemocentro , c.meta_doador
+                        from campanha c
                         inner join hemocentro h on h.id = c.id_hemocentro 
                         inner join usuario_hemocentro uh on uh.id_hemocentro = h.id
                         where uh.id_usuario = :id_usuario 

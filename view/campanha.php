@@ -29,12 +29,12 @@ $campanha = $controllerCampanha->BuscarTodosPorUsuario($_SESSION['usuario']);
                             <table class="table table-condensed table-hover table-striped">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
                                         <th> Nome </th>
                                         <th> Descrição </th>
+                                        <th> Meta </th>
+                                        <th> Local </th>
                                         <th> Data Inicial </th>
                                         <th> Data Final </th>
-                                        <th> Hemocentro </th>
                                         <th> </th>
                                     </tr>
                                 </thead>
@@ -43,14 +43,16 @@ $campanha = $controllerCampanha->BuscarTodosPorUsuario($_SESSION['usuario']);
                                     foreach ($campanha as $e) {
                                         ?>
                                         <tr>
-                                            <td><?php echo $e['id'] ?></td>
                                             <td><?php echo $e['campanha']; ?></td>
                                             <td><?php echo $e['descricao'] ?></td>
-                                            <td><?php echo $e['dataInicio'] ?></td>
-                                            <td><?php echo $e['dataFim'] ?></td>
+                                            <td><?php echo $e['meta_doador'] ?></td>
                                             <td><?php echo $e['hemocentro'] ?></td>
+                                            <td><?php echo date_format(date_create($e['dataInicio']), "d/m/Y") ?></td>
+                                            <td><?php
+                                                echo date_format(date_create($e['dataFim']), "d/m/Y")
+                                                ?></td>
                                             <td>
-                                                <a class="btn btn-default" href="edit_campanha.php?campanha=<?php echo $e[ 'id']?>"><i class="fa fa-fw fa-edit"></i></a></td>
+                                                <a class="btn btn-default" href="edit_campanha.php?campanha=<?php echo $e['id'] ?>"><i class="fa fa-fw fa-edit"></i></a></td>
                                         </tr>
                                         <?php
                                     }

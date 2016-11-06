@@ -121,7 +121,7 @@ if (isset($_POST['id'])) {
 
                                     <div class="form-group">
                                         <label class="control-label" for="meta_doador">Meta quantidade de doadores</label>
-                                        <input class="form-control" id="meta_doador" name="meta_doador"
+                                        <input class="form-control" id="meta_doador" name="meta_doador" value="<?php echo $campanha->getMeta_doador() ?>" 
                                                placeholder="" type="text" required="required">
                                     </div>
 
@@ -133,13 +133,14 @@ if (isset($_POST['id'])) {
 
                                     <div class="form-group">
                                         <label class="control-label" for="dataInicio">Data Inicial</label>
-                                        <input class="form-control" id="dataInicio" name="dataInicio" value="<?php echo $campanha->getDataInicio() ?>"
+                                        <input class="form-control" id="dataInicio" name="dataInicio" value="<?php echo  date_format(date_create( $campanha->getDataInicio() ), "d/m/Y")
+                                       ?>"
                                                placeholder="" type="text">
                                     </div>
 
                                     <div class="form-group">
                                         <label class="control-label" for="dataFim">Data Final</label>
-                                        <input class="form-control" id="dataFim" name="dataFim" value="<?php echo $campanha->getDataFim() ?>"
+                                        <input class="form-control" id="dataFim" name="dataFim" value="<?php echo date_format(date_create( $campanha->getDataFim() ), "d/m/Y") ?>"
                                                placeholder="" type="text">
                                     </div>
 

@@ -5,7 +5,7 @@
 
 require_once "../controller/controllerLogin.php";
 include "../includes/header.php";
-if(isset($_SESSION['usuario'])){    
+if (isset($_SESSION['usuario'])) {
     header("location: ../index.php");
 }
 if (isset($_POST['email']) && isset($_POST['password'])) {
@@ -16,7 +16,12 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     if (strlen($resultado->getId()) > 0) {
         $_SESSION['usuario'] = $resultado->getId();
         $_SESSION['tipousuario'] = $resultado->getTipo();
-        header("location: ../indexLogado.php");
+        $_SESSION['nomeusuario'] = $resultado->getNome();
+
+        if (intval($resultado->getTipo()) == 0) {
+            header("location: dashboard.php");
+        } else
+            header("location: ../indexLogado.php");
     } else {
         ?>
         <div class="section">
@@ -32,8 +37,6 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         <?php
     }
 }
-
-
 ?>
 <div class="section">
     <div class="container">

@@ -26,12 +26,12 @@ session_start();
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <?php if (isset($_SESSION['usuario'])) { ?>
+                    <?php if (isset($_SESSION['usuario']) && isset($_SESSION['tipousuario']) && $_SESSION['tipousuario'] == 1) { ?>
                         <a class="navbar-brand" href="/hasckeado/indexLogado.php"><span>Hemotech</span></a>
                         <?php
                     } else {
                         ?>
-                        <a class="navbar-brand" href="/hasckeado/index.php"><span>Doe Sangue</span></a>
+                        <a class="navbar-brand" href="/hasckeado/index.php"><span>Hemotech</span></a>
                     <?php }
                     ?>
                 </div>

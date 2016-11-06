@@ -30,6 +30,7 @@ include "../includes/header.php";
                                 <input class="form-control" id="password1" name="password1"
                                        placeholder="" type="password" required="required">
                                 <br />
+                                <label class="control-label" for="password1">Repita a senha</label>
                                 <input class="form-control" id="password2" name="password2"
                                        placeholder="" type="password" required="required">
                             </div>
