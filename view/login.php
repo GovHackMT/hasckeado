@@ -4,21 +4,35 @@
 //$resultado = $controller->BuscarTodos();
 
 require_once "../controller/controllerLogin.php";
+include "../includes/header.php";
+if(isset($_SESSION['usuario'])){    
+    header("location: ../index.php");
+}
 if (isset($_POST['email']) && isset($_POST['password'])) {
-   
-    session_start();
+
     $controllerLogin = new ControllerLogin();
     $resultado = $controllerLogin->BuscarPorLogin($_POST['email'], $_POST['password']);
 
     if (strlen($resultado->getId()) > 0) {
         $_SESSION['usuario'] = $resultado->getId();
-         header("location: ../indexLogado.php");
+        $_SESSION['tipousuario'] = $resultado->getTipo();
+        header("location: ../indexLogado.php");
+    } else {
+        ?>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-danger alert-dismissable">
+                            Não foi possível realizar login</div>
+                    </div>
+                </div>
+            </div>
+        </div
+        <?php
     }
-
-  
 }
 
-include "../includes/header.php";
 
 ?>
 <div class="section">

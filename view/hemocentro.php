@@ -6,6 +6,7 @@ if (!isset($_SESSION['usuario'])) {
 }
 
 require_once "../controller/controllerHemocentro.php";
+require_once "../controller/controllerUsuario.php";
 require_once "../vo/hemocentroVO.php";
 
 $controllerHemocentro = new ControllerHemocentro();
@@ -34,6 +35,7 @@ $hemocentro = $controllerHemocentro->BuscarTodos();
                                         <th> Data cadastro </th>
                                         <th> Data Atualização </th>
                                         <th> Status </th>
+                                        <th> Administrador </th>
                                         <th> </th>
                                     </tr>
                                 </thead>
@@ -50,7 +52,34 @@ $hemocentro = $controllerHemocentro->BuscarTodos();
                                             <td><?php echo $e->getData_atualizacao(); ?></td>
                                             <td><?php echo $e->getStatus() == 1 ? 'ATIVO' : 'INATIVO' ?></td>
                                             <td>
-                                                <a class="btn btn-default" href="edit_hemocentro.php?hemocentro=<?php echo $e->getId() ?>"><i class="fa fa-fw fa-edit"></i></a></td>
+                                                <?php
+                                                $controllerUsuario = new ControllerUsuario();
+                                                $usuario = $controllerUsuario->BuscarPorHemocentro($e->getId());
+                                                if (isset($_SESSION['tipousuario']) && $_SESSION['tipousuario'] == 0) {
+                                                    if ($usuario == null) {
+                                                        ?>
+                                                        <a class="btn btn-success" href="adm_hemocentro.php?acao=1&hemocentro=<?php echo $e->getId() ?>">Tornar Administrador</a>
+
+                                                        <?php
+                                                    } else
+                                                    if ($usuario != null && $_SESSION['usuario'] == $usuario->getId() ) {
+                                                        ?>
+
+                                                        <a class = "btn btn-danger" href = "adm_hemocentro.php?acao=0&hemocentro=<?php echo $e->getId() ?>">Deixar Administração</a>
+                                                        <?php
+                                                    }
+                                                } else if ($usuario != null)
+                                                    echo $usuario->getNome();
+                                                ?>
+                                            </td>
+                                            <td>
+                                                <?php
+                                                if ($usuario != null && $_SESSION['usuario'] == $usuario->getId() &&
+                                                        isset($_SESSION['tipousuario']) && $_SESSION['tipousuario'] == 0) {
+                                                    ?>
+                                                    <a class="btn btn-default" href="edit_hemocentro.php?hemocentro=<?php echo $e->getId() ?>"><i class="fa fa-fw fa-edit"></i></a>
+                                                    <?php } ?>
+                                            </td>
                                         </tr>
                                         <?php
                                     }

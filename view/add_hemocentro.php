@@ -1,6 +1,10 @@
 <?php
 include "../includes/header.php";
 
+if (!isset($_SESSION['usuario'])) {
+    header("location: ../index.php");
+}
+
 if (isset($_POST['nome'])) {
     require_once "../controller/controllerHemocentro.php";
     require_once "../vo/hemocentroVO.php";
@@ -18,7 +22,7 @@ if (isset($_POST['nome'])) {
     $arrayHemocentro['data_atualizacao'] = null;
     $arrayHemocentro['id_usuario'] = 1;
     $arrayHemocentro['status'] = $_POST['status'];
-    
+
     try {
         $controller->Inserir(new HemocentroVO($arrayHemocentro));
         ?>
@@ -98,13 +102,13 @@ if (isset($_POST['nome'])) {
                                         </div>
                                     </div>
                                 </div>
-                                 <div class="form-group">
-                                        <label class="control-label" for="status" >Status</label>
-                                        <select class="form-control" id="status" name="status">
-                                            <option value="1">Ativo</option>
-                                            <option value="0">Inativo</option>
-                                        </select>
-                                    </div>
+                                <div class="form-group">
+                                    <label class="control-label" for="status" >Status</label>
+                                    <select class="form-control" id="status" name="status">
+                                        <option value="1">Ativo</option>
+                                        <option value="0">Inativo</option>
+                                    </select>
+                                </div>
                                 <input type="hidden" id="txtLatitude" name="txtLatitude" />
                                 <input type="hidden" id="txtLongitude" name="txtLongitude" />
                                 <input type="submit" class="btn btn-primary" value="Cadastrar" name='submit'/>

@@ -1,6 +1,10 @@
 <?php
 include "../includes/header.php";
 
+if (!isset($_SESSION['usuario'])) {
+    header("location: ../index.php");
+}
+
 if (isset($_GET['hemocentro'])) {
     require_once "../controller/controllerHemocentro.php";
     require_once "../vo/hemocentroVO.php";
@@ -25,7 +29,7 @@ if (isset($_POST['id'])) {
     $arrayHemocentro['data_cadastro'] = $_POST['data_cadastro'];
     $arrayHemocentro['data_atualizacao'] = null;
     $arrayHemocentro['id_usuario'] = 1;
-    $arrayHemocentro['status'] =  $_POST['status'];
+    $arrayHemocentro['status'] = $_POST['status'];
     try {
         $controller->Atualizar(new HemocentroVO($arrayHemocentro));
         ?>
@@ -115,8 +119,8 @@ if (isset($_POST['id'])) {
                                     <div class="form-group">
                                         <label class="control-label" for="status" >Status</label>
                                         <select class="form-control" id="status" name="status">
-                                            <option value="1" <?php if ($hemocentro->getStatus()==1) echo 'selected'?>>Ativo</option>
-                                            <option value="0" <?php if ($hemocentro->getStatus()==0) echo 'selected'?>>Inativo</option>
+                                            <option value="1" <?php if ($hemocentro->getStatus() == 1) echo 'selected' ?>>Ativo</option>
+                                            <option value="0" <?php if ($hemocentro->getStatus() == 0) echo 'selected' ?>>Inativo</option>
                                         </select>
                                     </div>
 
