@@ -27,11 +27,11 @@ session_start();
 					<span class="icon-bar"></span>
 				</button>
 				<?php if (isset($_SESSION['usuario'])) { ?>
-					<a class="navbar-brand" href="/hasckeado/indexLogado.php"><span>Brand</span></a>
+					<a class="navbar-brand" href="/hasckeado/indexLogado.php"><span>Doe Sangue</span></a>
 					<?php
 				} else {
 					?>
-					<a class="navbar-brand" href="/hasckeado/index.php"><span>Brand</span></a>
+					<a class="navbar-brand" href="/hasckeado/index.php"><span>Doe Sangue</span></a>
 					<?php }
 					?>
 				</div>
@@ -49,7 +49,7 @@ session_start();
 								<ul class="dropdown-menu">
 									<li><a href="/hasckeado/view/usuario.php">Usuário</a></li>
 									<li><a href="/hasckeado/view/hemocentro.php">Hemocentro</a></li>
-									<li><a href = "/hasckeado/view/doador.php">Doador</a></li>
+									<li><a href = "/hasckeado/view/doador/add_doador.php">Doador</a></li>
 									<li><a href = "/hasckeado/view/campanha.php">Campanha</a></li>
 								</ul>
 							</li>

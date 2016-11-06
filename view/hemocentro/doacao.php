@@ -8,32 +8,31 @@ include "../../includes/header.php";
 require_once "../../controller/controllerDoador.php";
 require_once "../../vo/doadorVO.php";
 $controllerDoador = new controllerDoador();
-$doadores = $controllerDoador->BuscarTodos();
-
+$doadores = $controllerDoador->BuscarTodosView();
 ?>
 <script>
-    
-function updateUser(str) {
-    if (str == "") {
-       // document.getElementById("idDoador").innerHTML = "";
-        return;
-    } else {
-        if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
+
+    function updateUser(str) {
+        if (str == "") {
+            // document.getElementById("idDoador").innerHTML = "";
+            return;
         } else {
-            // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                //document.getElementById("txtHint").innerHTML = this.responseText;
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
             }
-        };
-        xmlhttp.open("GET","updateUser.php?q="+str,true);
-        xmlhttp.send();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    //document.getElementById("txtHint").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "updateUser.php?q=" + str, true);
+            xmlhttp.send();
+        }
     }
-}
 </script>
 
 
@@ -67,24 +66,25 @@ function updateUser(str) {
                                     foreach ($doadores as $d) {
                                         ?>
                                         <tr>
-                                            <td><?php echo $d->getId(); ?></td>
-                                            <td><?php echo $d->getNome(); ?></td>
-                                            <td><?php echo $d->getEndereco(); ?></td>
-                                            <td><?php echo $d->getEmail(); ?></td>
-                                            <td><?php echo $d->getTipoSanguineo(); ?></td>
-                                            <td><?php if (is_null($d->getDataUltimaDoacao())) {
+                                            <td><?php echo $d['id']; ?></td>
+                                            <td><?php echo $d['nome']; ?></td>
+                                            <td><?php echo $d['endereco']; ?></td>
+                                            <td><?php echo $d['email']; ?></td>
+                                            <td><?php echo $d['tipoSanguineo'] ?></td>
+                                            <td><?php
+                                    if (is_null($d['dataUltimaDoacao'])) {
                                         echo "Sem registro";
                                     } else {
-                                        echo $d->getDataUltimaDoacao;
+                                        echo $d['dataUltimaDoacao'];
                                     }
-                                    ?></td>
+                                        ?></td>
                                             <td> <button type="button" action="" class="btn btn-success">Registrar Doação</button>
 
                                             </td>
                                         </tr>
-    <?php
-}
-?>
+                                        <?php
+                                    }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>

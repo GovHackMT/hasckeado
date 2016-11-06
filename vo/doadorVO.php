@@ -6,26 +6,19 @@ class DoadorVO {
     private $nome;
     private $email;
     private $endereco;
-    private $tipoSanguineo;
+    private $tipoSanguineoID;
+    private $dataUltimaDoacao;
 
     public function __construct($row) {
         $this->setId($row['id']);
         $this->setNome($row['nome']);
         $this->setEmail($row['email']);
         $this->setEndereco($row['endereco']);
-        $this->setTipoSanguineo($row['tipoSanguineo']);
-        
-    }
-    
-    function getTipoSanguineo() {
-        return $this->tipoSanguineo;
+        $this->setTipoSanguineoID($row['tipoSanguineoID']);
+        $this->setDataUltimaDoacao($row['dataUltimaDoacao']);
     }
 
-    function setTipoSanguineo($tipoSanguineo) {
-        $this->tipoSanguineo = $tipoSanguineo;
-    }
-
-        function getId() {
+    function getId() {
         return $this->id;
     }
 
@@ -39,6 +32,14 @@ class DoadorVO {
 
     function getEndereco() {
         return $this->endereco;
+    }
+
+    function getTipoSanguineoID() {
+        return $this->tipoSanguineoID;
+    }
+
+    function getDataUltimaDoacao() {
+        return $this->dataUltimaDoacao;
     }
 
     function setId($id) {
@@ -57,6 +58,13 @@ class DoadorVO {
         $this->endereco = $endereco;
     }
 
+    function setTipoSanguineoID($tipoSanguineoID) {
+        $this->tipoSanguineoID = $tipoSanguineoID;
+    }
+
+    function setDataUltimaDoacao($dataUltimaDoacao) {
+        $this->dataUltimaDoacao = $dataUltimaDoacao;
+    }
 
 }
 
