@@ -113,7 +113,7 @@ if (isset($_POST['nome']) && isset($_POST['endereco']) && isset($_POST['telefone
 
                                 <input type="submit" class="btn btn-primary" value="Cadastrar" name='submit'/>
 
-                                <a class="btn btn-default" href="doador.php">Voltar</a>
+                                <a class="btn btn-default" href="/hasckeado/index.php">Voltar</a>
                             </form>
                         </div>
                     </div>
