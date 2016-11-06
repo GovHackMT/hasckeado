@@ -78,7 +78,7 @@ class ModelHemocentro {
                 :endereco,
                 :data_cadastro,
                 :data_atualizacao,
-                :id_usuario
+                :id_usuario,
                 :status)";
 
             $p_sql = Conexao::getInstance()->prepare($sql);
@@ -93,7 +93,6 @@ class ModelHemocentro {
             $p_sql->bindValue(":data_atualizacao", $hemocentro->getData_atualizacao());
             $p_sql->bindValue(":id_usuario", $hemocentro->getId_usuario());
             $p_sql->bindValue(":status", $hemocentro->getStatus());
-
 
             return $p_sql->execute();
         } catch (Exception $e) {

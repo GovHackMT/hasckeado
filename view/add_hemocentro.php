@@ -1,7 +1,7 @@
 <?php
 include "../includes/header.php";
 
-if (isset($_POST['nome']) && isset($_POST['txtEndereco']) && isset($_POST['telefone'])) {
+if (isset($_POST['nome'])) {
     require_once "../controller/controllerHemocentro.php";
     require_once "../vo/hemocentroVO.php";
 
@@ -17,7 +17,8 @@ if (isset($_POST['nome']) && isset($_POST['txtEndereco']) && isset($_POST['telef
     $arrayHemocentro['data_cadastro'] = null;
     $arrayHemocentro['data_atualizacao'] = null;
     $arrayHemocentro['id_usuario'] = 1;
-
+    $arrayHemocentro['status'] = $_POST['status'];
+    
     try {
         $controller->Inserir(new HemocentroVO($arrayHemocentro));
         ?>
@@ -42,7 +43,7 @@ if (isset($_POST['nome']) && isset($_POST['txtEndereco']) && isset($_POST['telef
                         <div class="alert alert-danger alert-dismissable">
                             <button contenteditable="false" type="button" class="close" data-dismiss="alert"
                                     aria-hidden="true">×</button>
-        <?php print_r($e) ?>
+                                    <?php print_r($e) ?>
                         </div>
                     </div>
                 </div>
@@ -71,25 +72,25 @@ if (isset($_POST['nome']) && isset($_POST['txtEndereco']) && isset($_POST['telef
                     </div>
                     <div class="panel-body">
                         <div class="col-md-12">
-                            <form method="POST" action="hemocentro.php">
+                            <form method="POST" action="add_hemocentro.php">
                                 <div class="form-group">
                                     <label class="control-label" for="nome">Nome</label>
                                     <input class="form-control" id="nome" name="nome"
-                                           placeholder="" type="text">
+                                           placeholder="" type="text" required="required">
                                 </div>
 
                                 <div class="form-group">
                                     <label class="control-label" for="telefone" >Telefone</label>
                                     <input class="form-control telefone" id="telefone" name="telefone"
                                            data-mask="(00) 0000-0000" data-mask-selectonfocus="true"
-                                           type="text">
+                                           type="text" required="required">
                                 </div>
 
                                 <div class="form-group">
                                     <label class="control-label" for="txtEndereco">Endereço</label>
                                     <div class="campos">
                                         <input class="form-control" id="txtEndereco" name="txtEndereco"
-                                               placeholder="" type="text">
+                                               placeholder="" type="text" required="required">
                                         <!--<input type="button" id="btnEndereco" name="btnEndereco" value="Mostrar no mapa" />-->
                                         <br />
 
@@ -97,6 +98,13 @@ if (isset($_POST['nome']) && isset($_POST['txtEndereco']) && isset($_POST['telef
                                         </div>
                                     </div>
                                 </div>
+                                 <div class="form-group">
+                                        <label class="control-label" for="status" >Status</label>
+                                        <select class="form-control" id="status" name="status">
+                                            <option value="1">Ativo</option>
+                                            <option value="0">Inativo</option>
+                                        </select>
+                                    </div>
                                 <input type="hidden" id="txtLatitude" name="txtLatitude" />
                                 <input type="hidden" id="txtLongitude" name="txtLongitude" />
                                 <input type="submit" class="btn btn-primary" value="Cadastrar" name='submit'/>
