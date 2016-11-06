@@ -1,40 +1,22 @@
-# Hasckeado
+ # Hemotech
 
 Sistema de gerenciamento de doadores de sangue. 
 
-Participantes:
+# Equipe Hasckeado
 
-Thais Bueno @tfbbueno
-Marcos Oliveira @ziguifrido
-Jusolu Coperfield @jotace1992
-Fábio Archanjo @fabiinfo
-
-
+* Thais Bueno @tfbbueno
+* Marcos Oliveira @ziguifrido
+* Jusolu Coperfield @jotace1992
+* Fábio Archanjo @fabiinfo
 
 
+# Aspectos ténicos do projeto
 
+* PHP 
+* MySql 
+* Apache
+* Bootstrap 
+* Highcharts
+* Google Maps API
+* Bootstrap Date-Picker Plugin
 
-
-
-
-
-
-
-
-
-
-
-Linguagem:
-
-Sistema desenvolvido na linguagem PHP
-
-Framework Bootstrap
-
-Banco de dados MySql
-
-
-
-
-
-http://getbootstrap.com/
-https://secure.php.net/docs.php
